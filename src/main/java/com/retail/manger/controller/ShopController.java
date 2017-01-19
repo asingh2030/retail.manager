@@ -29,7 +29,7 @@ public class ShopController {
 	private RetailService retailService;
 	
 	@ResponseStatus(value = HttpStatus.OK)
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
 	@ApiOperation(value = "Add shop.",
 					notes = "Add shop details with its location."
 					, response = ShopResponseDto.class)
@@ -46,7 +46,7 @@ public class ShopController {
 	}
 	
 	@ResponseStatus(value = HttpStatus.OK)
-	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	@ApiOperation(value = "Find all shops in retails management application.",
 	notes = "Find all shops."
 	, response = ShopResponseDto.class
@@ -67,7 +67,7 @@ public class ShopController {
 	}
 	
 	@ResponseStatus(value = HttpStatus.OK)
-	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	@ApiOperation(value = "Update shop details in retails management application.",
 	notes = "Update shop details."
 	, response = ShopResponseDto.class)

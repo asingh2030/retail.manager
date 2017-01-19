@@ -65,8 +65,10 @@ public class LocationService {
 			double distance = -1;
 			for (ShopDao shopDao : shops) {
 				Location location = shopDao.getLocation();
-				double d = location.distanceTo(givenLocation);
-				if(d <= distance || distance < 0){
+				double d = location.distanceTo(givenLocation);//distance never be negative
+				System.out.println("shopDao name = "+shopDao.getName()+", d = "+d+", distance = "+distance);
+				if(d <= distance/*actual condition to check if we receive distance less than previous one*/ 
+						|| distance < 0/*condition only for very first time check.*/){
 					nearestShop = shopDao;
 					distance = d;
 				}
